@@ -7,7 +7,7 @@ function gallery()
     foreach ($images as $img) {
         echo '  
         <div  class="border d-flex flex-row bd-highlight mb-3 justify-content-center float-left">
-        <a  target="_blank"  href="http://geek/?action=one&img='.$img.'">
+        <a  target="_blank"  href="http://geek/gallery.php?action=one&file='.$img.'">
         
         <div class="p-2 bd-highlight">
             <img style="height: 250px;width: 250px;" class="1"
@@ -21,3 +21,4 @@ function gallery()
 
 
 gallery();
+////
