@@ -1,5 +1,5 @@
 <?php 
-    $img=htmlspecialchars($_GET["img"]); 
+    $img=htmlspecialchars($_GET["file"]); 
     $img=stripslashes($img); 
     if (file_exists("img/$img")) 
     { 
@@ -17,3 +17,5 @@
     else {
         echo "хек";
     }
+
+///

@@ -12,17 +12,15 @@ function routeHome() {
     $echo = render('site/home');
     echo $echo;
 }
-
-function routeGal() {
+////
+////
+function routeAll() {
     $echo = render('gallery/all');
     echo $echo;
 }
 
-function routeOne() {
-    $echo = render('gallery/one');
-    echo $echo;
-}
-
+////
+///
 function routeError() {
 
     $echo = render('site/error');
@@ -31,4 +29,6 @@ function routeError() {
 }
 
 route();
+
+//////
 
