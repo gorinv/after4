@@ -3,23 +3,20 @@ require '../engine/core.php';
 
 
 function routeIndex() {
+
     systemLog('подключили логирование', 'error');
     $echo = render('site/home');
+    $image = getItem('select * from image order by id desc');
+    var_dump($image);
+
+    $images = getItemArray('select * from image order by id desc');
+    var_dump($images);
+
     echo $echo;
 }
 
 function routeHome() {
     $echo = render('site/home');
-    echo $echo;
-}
-
-function routeGal() {
-    $echo = render('gallery/all');
-    echo $echo;
-}
-
-function routeOne() {
-    $echo = render('gallery/one');
     echo $echo;
 }
 
