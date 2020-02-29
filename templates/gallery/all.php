@@ -1,23 +1,14 @@
 <?php
-function gallery()
-{
-    $images = scandir('img');
-    unset($images[0]);
-    unset($images[1]);
-    foreach ($images as $img) {
-        echo '  
-        <div  class="border d-flex flex-row bd-highlight mb-3 justify-content-center float-left">
-        <a  target="_blank"  href="http://geek/?action=one&img='.$img.'">
-        
-        <div class="p-2 bd-highlight">
-            <img style="height: 250px;width: 250px;" class="1"
-                 src="img/' . $img . '"
-                 alt="это кот "/>
-            </a>
-        </div> </div> ';
-    }
-    return;
-}
+/** @var array $data - массив картинок */
+$images = $data['images'];
+?>
+<p><a href="gallery.php?action=download" class="btn btn-success">Загрузить</a>
+</p>
+<?php foreach ($images as $image) { ?>
+    <a data-fancybox="gallery" href="<?= $config['imagesUrl'] . '/' . $image['name'] ?>">
+        <img width="150px" src="<?= $config['imagesUrl'] . '/' . $image['name'] ?> ">
+    </a>
+    <a href="gallery.php?action=one&image=<?= $image['name'] ?>">gallery.php?action=one&image=<?= $image['name'] ?></a>
+    <p>Рейтинг: <?= $image['rating'] ?></p>
 
-
-gallery();
+<?php } ?>
