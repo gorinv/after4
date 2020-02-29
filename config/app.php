@@ -2,13 +2,14 @@
 return [
     //  Настройки приложения
     'app' => [
-        'name' => 'Geek',
-        'host' => 'geek',
+        'name' => 'Geekbrains PHP 1',
+        'host' => 'php.geek',
         'logPath' => ROOT . "/data/logs",
         'templatesPath' => ROOT . '/templates',
 
         'imagesUrl' => '/images',
         'imagesPath' => 'images',
+        'goodsPath' => 'goods',
 
         'assets' => [
             'css' => [

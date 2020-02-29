@@ -2,14 +2,13 @@
 /** @var array $data - массив картинок */
 $images = $data['images'];
 ?>
+<p><a href="gallery.php?action=download" class="btn btn-success">Загрузить</a>
+</p>
+<?php foreach ($images as $image) { ?>
+    <a data-fancybox="gallery" href="<?= $config['imagesUrl'] . '/' . $image['name'] ?>">
+        <img width="150px" src="<?= $config['imagesUrl'] . '/' . $image['name'] ?> ">
+    </a>
+    <a href="gallery.php?action=one&image=<?= $image['name'] ?>">gallery.php?action=one&image=<?= $image['name'] ?></a>
+    <p>Рейтинг: <?= $image['rating'] ?></p>
 
-    <?php foreach ($images as $img) { ?>
-        <a data-fancybox="gallery" href="<?= $config['imagesUrl'] . '/' . $img ?>">
-            <img width="150px" src="<?= $config['imagesUrl'] . '/' . $img ?> ">
-        </a>
-        <a href="gallery.php?action=one&image=<?= $img ?>">gallery.php?action=one&image=<?= $img ?></a>
-         <br>rating: 
-         <?  
-         $rating = getItem ('select * from image where name="'.$img.'"'); 
-         echo $rating['rating'];?><br>
-    <?php } ?>
+<?php } ?>

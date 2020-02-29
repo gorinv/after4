@@ -6,11 +6,6 @@ function routeIndex() {
 
     systemLog('подключили логирование', 'error');
     $echo = render('site/home');
-    $image = getItem('select * from image order by id desc');
-    var_dump($image);
-
-    $images = getItemArray('select * from image order by id desc');
-    var_dump($images);
 
     echo $echo;
 }
@@ -25,6 +20,7 @@ function routeError() {
     $echo = render('site/error');
 
     echo $echo;
+    die();
 }
 
 route();
